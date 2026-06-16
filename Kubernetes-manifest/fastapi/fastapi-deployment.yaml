@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-argo-deployment
+  namespace: argocd-demo-ns
+spec:
+  replicas: 2                                          # <<---- Number of Pod replicas to deploy & manage
+  selector:
+    matchLabels:
+      app: fastapi-test-argo
+  template:
+    metadata:
+      labels:
+        app: fastapi-test-argo
+    spec:
+      containers:
+      - name: fastapi-container
+        image: jdhet/fastapi-argo:latest
+        ports:
+        - containerPort: 80
+        resources:
+          requests: { cpu: "100m", memory: "128Mi" }
+          limits:   { cpu: "500m", memory: "512Mi" }

@@ -5,8 +5,8 @@ on:
     branches:
       - main
     # Skip builds for image updater commits
-    #paths-ignore:
-    #  - 'Kubernetes-manifest/**'
+    paths-ignore:
+      - 'Kubernetes-manifest/**'
 
 jobs:
   build-and-push:
