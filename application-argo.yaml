@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/jdht1992/fastapi-argocd.git
     targetRevision: HEAD
-    path: Kubernetes-manifest
+    path: Kubernetes-manifest/fastapi
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd-demo-ns
