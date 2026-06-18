@@ -19,7 +19,6 @@ spec:
       containers:
       - name: fastapi-container
         image: docker.io/jdhet/fastapi-argo:latest
-        imagePullPolicy: IfNotPresent   # only pulls if not already cached locally
         ports:
         - containerPort: 80
         resources:
