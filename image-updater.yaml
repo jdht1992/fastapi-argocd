@@ -13,7 +13,7 @@ spec:
     - namePattern: "gitops-argocd-test"
       images:
         - alias: "fastapi"
-          imageName: "docker.io/jdht1992/fastapi-argo"
+          imageName: "docker.io/jdhet/fastapi-argo"
           commonUpdateSettings:
             updateStrategy: digest
             allowTags: "latest"

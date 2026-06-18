@@ -4,5 +4,5 @@ resources:
   - fastapi-deployment.yaml    # ← match actual filenames
   - fastapi-service.yaml
 images:
-  - name: docker.io/jdht1992/fastapi-argo
+  - name: docker.io/jdhet/fastapi-argo
     newTag: latest
