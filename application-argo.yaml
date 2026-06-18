@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/jdht1992/fastapi-argocd.git
+    repoURL: https://github.com/jdht1992/fastapi-argo.git
     targetRevision: HEAD
     path: Kubernetes-manifest/fastapi
   destination:

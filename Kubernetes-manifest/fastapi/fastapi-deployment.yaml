@@ -18,8 +18,8 @@ spec:
       terminationGracePeriodSeconds: 30
       containers:
       - name: fastapi-container
-        image: jdhet/fastapi-argo:latest
-        imagePullPolicy: "Always"
+        image: docker.io/jdht1992/fastapi-argo:latest
+        imagePullPolicy: IfNotPresent   # only pulls if not already cached locally
         ports:
         - containerPort: 80
         resources:

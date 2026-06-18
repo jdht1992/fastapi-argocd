@@ -35,6 +35,9 @@ jobs:
         with:
           context: .
           push: true
-          tags: | 
+          tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-argo:latest
             ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-argo:sha${{ steps.git-sha.outputs.sha }}
+
+      - name: Show digest
+        run: echo "Image pushed with digest ${{ steps.push.outputs.digest }}"
