@@ -16,6 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.0
 
+      - name: Get Short Git SHA
+        id: git-sha 
+        run: echo "sha=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@d586dba76842633160b90ff13307931c438ec12e # v4.0.0
 
@@ -31,4 +35,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-argo:latest
+          tags: | 
+            ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-argo:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-argo:sha${{ steps.git-sha.outputs.sha }}

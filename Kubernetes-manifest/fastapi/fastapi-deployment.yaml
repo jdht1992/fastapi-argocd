@@ -3,8 +3,10 @@ kind: Deployment
 metadata:
   name: fastapi-argo-deployment
   namespace: argocd-demo-ns
+  labels:
+    app: fastapi-test-argo
 spec:
-  replicas: 2                                          # <<---- Number of Pod replicas to deploy & manage
+  replicas: 3
   selector:
     matchLabels:
       app: fastapi-test-argo
@@ -13,9 +15,11 @@ spec:
       labels:
         app: fastapi-test-argo
     spec:
+      terminationGracePeriodSeconds: 30
       containers:
       - name: fastapi-container
         image: jdhet/fastapi-argo:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 80
         resources:
