@@ -6,7 +6,7 @@ app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"message": "¡Hola desde Kubernetes sha completo!", "status": "Ready"}
+    return {"message": "¡Hola desde Kubernetes sha completo! test 2", "status": "Ready"}
 
 
 @app.get("/health")
